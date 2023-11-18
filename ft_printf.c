@@ -6,7 +6,7 @@
 /*   By: mel-rhay <mel-rhay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 21:45:36 by mel-rhay          #+#    #+#             */
-/*   Updated: 2023/11/18 23:46:27 by mel-rhay         ###   ########.fr       */
+/*   Updated: 2023/11/19 00:48:04 by mel-rhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static void ft_printf_format(char f, va_list args, int *count)
         ft_putnbr_base(va_arg(args, int), 16, "0123456789ABCDEF", count);
     else if (f == '%')
         ft_putchar('%', count);
+    else if (f == 'p')
+        ft_putvoid(va_arg(args, void *), count);
 }
 
 int	ft_printf(const char *s, ...)
@@ -55,7 +57,7 @@ int	ft_printf(const char *s, ...)
 
 // int main()
 // {
-//     printf("cout = %d\n", ft_printf("hello %d  %s %x \n", 12345, " everyone", 444));
-//     printf("cout = %d\n", printf("hello %d  %s %x \n", 12345, " everyone", 444));
+//     ft_printf("%s\n", NULL);
+//     printf("%s\n", NULL);
 //     return 0;
 // }

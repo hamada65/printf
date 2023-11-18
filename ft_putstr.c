@@ -6,7 +6,7 @@
 /*   By: mel-rhay <mel-rhay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 22:25:43 by mel-rhay          #+#    #+#             */
-/*   Updated: 2023/11/18 23:34:06 by mel-rhay         ###   ########.fr       */
+/*   Updated: 2023/11/19 00:47:38 by mel-rhay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	ft_putstr(char *s, int *count)
 {
-	while (*s)
+    if (!s)
+        ft_putstr("(null)", count);
+    else
     {
-        ft_putchar(*s, count);
-        s++;
+        while (*s)
+        {
+            ft_putchar(*s, count);
+            s++;
+        }
     }
 }
