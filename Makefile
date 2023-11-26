@@ -5,12 +5,8 @@ OBJS = ${SRCS:.c=.o}
 CC = cc
 FLAGS = -Wall -Werror -Wextra
 RM = rm -f
-INCS = .
 
 all: ${NAME}
-
-.c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o} -I ${INCS}
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
